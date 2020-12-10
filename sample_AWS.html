@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <meta charset="UTF-8">
+  <title>AWS SDK for JavaScript</title>
+</head>
+
+<body>
+  <script src="https://sdk.amazonaws.com/js/aws-sdk-2.410.0.min.js"></script>
+
+  <script type="text/javascript">
+    AWS.config = new AWS.Config({
+      accessKeyId: 'AKIAIOSFODNN7EXAMPLE',
+      secretAccessKey: 'wJalrXUtnFEMI/K7MDENG/bPxRfiCYEXAMPLEKEY',
+      region: 'us-east-1',
+      endpoint: 'http://192.168.33.14:4566'
+    });
+
+    var cloudwatchlogs = new AWS.CloudWatchLogs({ apiVersion: '2014-03-28' });
+
+    cloudwatchlogs.describeLogGroups(function (err, data) {
+      if (err) {
+        console.log(err, err.stack);
+      } else {
+        console.log(data.logGroups);
+      }
+    });
+  </script>
+</body>
+</html>
