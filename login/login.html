@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html>  
+    <head>
+        <meta charset = "UTF-8">
+        <title>login </title>
+        <link rel="stylesheet" type="text/css" href="login.css">
+        
+    </head>
+    <body>
+        <div id = "app">
+            <b>名前:</b><br>
+            <input type="text" v-model ="name_input" size="30" maxlength="20"><br>
+            
+            <b>パスワード:</b><br>
+            <input type="text" v-model = "pass_input"size="30" maxlength="20"><br>
+            <br>
+            <p>{{name_input}}</p><br>
+            <button onclick="handleClick();">完了</button>
+        </div>
+        <script src="https://cdn.jsdelivr.net/npm/vue@2.6.12/dist/vue.js"></script>        
+        <script src="https://sdk.amazonaws.com/js/aws-sdk-2.809.0.min.js"></script>
+        <script type="text/javascript" src="login.js"></script>
+             
+    </body>
+</html>
