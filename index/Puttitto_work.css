@@ -12,7 +12,14 @@
    border-radius: 10px;
  }
  .account-tag *{
-  margin-left: 10px;
+  margin-left: 60px;
+ }
+ .account-image{
+  position: absolute;
+  width: 50px; 
+  height: 50px;
+  left: -55px;
+  top: 10px;
  }
  .contents{
   position: absolute;
@@ -31,6 +38,7 @@
    height: 220px;
    background-color: #ffeeba;
    margin-bottom: 20px;
+   margin-left: 5px;
  }
  .background-leftbar {
   position: absolute;
