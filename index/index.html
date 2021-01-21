@@ -5,32 +5,57 @@
         <title> Puttitto_work </title>
         <link rel="stylesheet" type="text/css" href="Puttitto_work.css">
     </head>
-    <body style="background-color: #ffb84d;">
-        <div class="serch_window">
-            <input type="text" v-model='serch_word' size="30">
-        </div>
-
-        <div class="contents" id = "app">
-            <div class="reshipi" v-for="content in Contents_js">   
-                <img src="../image/gahag-0116897986.jpg" style="width:300px; height: 160px; ">
-                <h1 style="font-size: 20px; margin-left: 5px; margin-top: -20px; margin-bottom: -20px;">{{content.title}}</h1><br>
-                <p style=" font-size: 17px; margin-top: -20px;">{{content.message}}</p>
+    <body style="background-color: #ffb84d; ">
+        <div id = "app">
+            <div class="serch_window">
+                <input type="text"  size="30">
+                <a href = ""  onclick="" style="margin-left: 60px;">検索</a>
             </div>
-        </div>
+             
+            <div class="contents" >
+            <button class="reshipi" v-for="content in Contents_js" type="button">   
+                <img src="../image/gahag-0116897986.jpg" style="width:300px; height: 160px; margin-left: -5px;">
+                <h1 style="font-size: 20px; margin-left: 5px; margin-top: 0px; margin-bottom: 0px;">{{content.title}}</h1><br>
+                <p style=" font-size: 17px; margin-top: -20px;">{{content.message}}</p>
+            </button>
+            </div>
+            
+            <div class="account-tag">
+                <h1 onclick = "acount_Click();" style="font-size: 30px; color: #674f49; margin-top: -2px;">アカウント1</h1>
+                <p style="margin-top: -20px;">fdafafddaf@gmail.com</p>
+                <img src="../image/illustration-free-01.jpg" class="account-image">
+            </div>
+    
+            <div class="background-leftbar">
+                <a onclick="news_Click();" style="color: #4c8d42;" href = ""><b>ニュース<br></b></a>
+                <a onclick="news_Click();" style="color: #a16e55;" href = ""><b>今日のごはん<br></b></a>
+                <a onclick="news_Click();" style="color: #da8c5e;" href = ""><b>マイリスト<br></b></a>
+            </div>
+            
+            <button class="recipe_creation" href="" onclick="recipe_creation();"><b>レシピ作成</b></button>
+            
+            <div v-bind:style ="{display:dm}">
+                <div class = "make_recipe_back">
+                </div>
+                <div class="make_recipe">
+                    <button onclick="make_recipe_close();"><h1 style="color:#ffeeba;">Close</h1></button>
+                    <div style="margin-top: 20px; margin-left: 10px;">
+                        <h1 style="font-size:20px">料理名</h1>
+                        <input type="text" class="input_title" v-model="input_title">
+                    </div>
+                    
+                    <div style="margin-top: 20px; margin-left: 10px;">
+                        <h1 style="font-size:20px">コメント</h1>
+                        <input type="text" class="input_title" v-model = "input_comment">
+                    </div>
 
-        <div class="account-tag">
-            <h1 onclick = "acount_Click();" style="font-size: 30px; color: #674f49; margin-top: -2px;">アカウント1</h1>
-            <p style="margin-top: -20px;">fdafafddaf@gmail.com</p>
-            <img src="../image/illustration-free-01.jpg" class="account-image">
-        </div>
-        
-        <div class="background-leftbar">
-            <h1 onclick="news_Click();" style="color: #4c8d42;">ニュース</h1>
-            <h1 onclick="news_Click();" style="color: #a16e55;">今日のごはん</h1>
-            <h1 onclick="news_Click();" style="color: #da8c5e;">マイリスト</h1>
+                    <button onclick="make_recipe_post();"><h1 class="make_recipe_post">投稿</h1></button>
+                </div>    
+            </div>
+                
         </div>
         
         <script src ="https://cdn.jsdelivr.net/npm/vue@2.6.12/dist/vue.js"></script>    
-        <script src ="index.js" type="text/javascript"></script> 
+        <script type="text/javascript" src ="index.js" ></script> 
     </body>
 </html>

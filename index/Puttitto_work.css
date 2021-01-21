@@ -39,6 +39,7 @@
    background-color: #ffeeba;
    margin-bottom: 20px;
    margin-left: 5px;
+   text-align: left;
  }
  .background-leftbar {
   position: absolute;
@@ -50,20 +51,76 @@
   border-radius: 10px;
  }
  .background-leftbar *{
-  text-align:left;
+  text-align: left;
   margin-left: 10px;
+  font-size: 30px;
  }
  .serch_window{
+  border-radius: 10px;
   margin-left: auto;
   margin-right: auto;
-  margin-top: 10px;
+  margin-top: 15px;
   width: 500px;
   height: 50px;
   background: #ffeeba;
  }
  .serch_window *{
-  font-size: 150%;
+  font-size: 20px;
   margin-top: 10px;
   margin-left: 10px;
   background: #ffeeba;
+  border: none; 
+  outline: none;
+ }
+ .recipe_creation{
+  position: absolute;
+  border-radius: 10px;
+  top: 22px;
+  left: 1000px;
+  width: 150px;
+  height: 40px;
+  background-color: #ffeeba;
+  font-size: 20px;   
+ }
+ .make_recipe_back{
+   position: absolute;
+   left: 0px;
+   top: 0px;
+   width: 100%;
+   height: 100%;
+   background-color: black;
+   opacity: 0.5;
+ }
+ .make_recipe{
+   position: absolute;
+   border-radius: 10px;
+   transform: translate(-50%, -50%);
+   top: 50%;
+   left: 50%;
+   background-color:  #ffb84d;
+   width: 400px;
+   height: 400px;
+ }
+ .input_title{
+   background-color: #ffeeba;
+   width: 350px;
+   font-size: 20px;
+   border-radius: 10px;
+   border: none;
+   outline: none;
+ }
+ .make_recipe_post{
+  margin-left: auto;
+  margin-right: auto;
+  background-color: #ffeeba;
+  width: 100px;
+  border-radius: 10px;
+ }
+ a{
+  text-decoration: none;
+ }
+ button{
+  border: none;  /* 枠線を消す */
+  outline: none; /* クリックしたときに表示される枠線を消す */
+  background: transparent;
  }

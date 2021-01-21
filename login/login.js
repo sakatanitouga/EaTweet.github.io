@@ -3,7 +3,8 @@ var app = new Vue({
    data:{
            name_input:'',
            pass_input:'',
-           result_textbox:''
+           result_textbox:'',
+           dm:'none'
    }
 });
 
