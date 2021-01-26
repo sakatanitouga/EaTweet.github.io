@@ -99,7 +99,7 @@
    left: 50%;
    background-color:  #ffb84d;
    width: 400px;
-   height: 400px;
+   height: 600px;
  }
  .input_title{
    background-color: #ffeeba;
@@ -116,6 +116,11 @@
   width: 100px;
   border-radius: 10px;
  }
+ #preview img {
+  width: 200px;
+  margin: 10px;
+  border: solid 1px silver;
+}
  a{
   text-decoration: none;
  }
