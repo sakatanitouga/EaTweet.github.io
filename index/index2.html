@@ -6,15 +6,7 @@
         <link rel="stylesheet" type="text/css" href="Puttitto_work2.css">
     </head>
     <body>
-        <h1>File Upload</h1>
-        <p>サンプル ファイルアップロード</p>
-    
-        <form action="http://127.0.0.1:58080" method="POST" enctype="multipart/form-data">
-          <input type="file" name="file">
-          <input type="submit" value="Upload">
-        </form>
-        
-        <script src="https://cdn.jsdelivr.net/npm/vue@2.6.12/dist/vue.js"></script>   
-        <script src ="index2.js" type="text/javascript"></script> 
+        <input type="file" id="inputfiles" multiple/> <!--複数のファイルを読み込む場合-->
+        <script src="index2.js" ></script>
     </body>
 </html>

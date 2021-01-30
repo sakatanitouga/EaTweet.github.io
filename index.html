@@ -48,16 +48,15 @@
                         <h1 style="font-size:20px">コメント</h1>
                         <input type="text" class="input_title" v-model = "input_comment">
                     </div>
-
-
-                    <form action="http://127.0.0.1:58080" method="POST" enctype="multipart/form-data">
+                    <form method="post" action="http://localhost/aaa/" enctype="multipart/form-data">
+                        <input name = "user_id" v-model="user_id" style="display: none;">
                         <input type="file" name="file" id="up_image" multiple>
-                        <input type="submit" value="Upload">
-                      </form>
-                    <div id = "preview"></div>
+                        <div id = "preview"></div>
+                        <button id="投稿"type="submit"><h1 class="make_recipe_post">投稿</h1></button>
+                    </form>
                     
 
-                    <button id="投稿"><h1 class="make_recipe_post">投稿</h1></button>
+                   
                 </div>    
             </div>
         </div>

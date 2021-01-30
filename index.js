@@ -5,7 +5,8 @@
       dm:'none',
       Contents_js: [],
       input_title:'',
-      input_comment:''
+      input_comment:'',
+      user_id:'2dfa'
     }
   });
   
@@ -22,7 +23,7 @@
     make_recipe:[] 
   }
   
-  var image_src='';
+  var image_src;
   for(let i = 0;i<10;i++){
       var content = {title: 'うんこ',message: 'トイレいきたいです！！！！'};
       Contents.$set(Contents.Contents_js, i, content);
@@ -54,10 +55,12 @@
       // ファイルが読み込まれたときに実行する
       reader.onload = function (e) {
         const imageUrl = e.target.result; // 画像のURLはevent.target.resultで呼び出せる
+        
         const img = document.createElement("img"); // img要素を作成
-        img.src = imageUrl; // 画像のURLをimg要素にセット
-        preview.appendChild(img); // #previewの中に追加
-        image_src = imageUrl;
+        img.src = imageUrl; //画像のURLをimg要素にセット
+        preview.appendChild(img); //#previewの中に追加
+        image_src = img.src;
+        console.log(image_src);
       }
     
       // いざファイルを読み込む
@@ -66,14 +69,15 @@
     
     
     // <input>でファイルが選択されたときの処理
-    const fileInput = document.getElementById('up_image');
-    const handleFileSelect = () => {
-      const files = fileInput.files;
+    var inputFiles = document.getElementById('up_image');
+    inputFiles.addEventListener("change", function(e) {
+      console.log(e.target.files);
+      image_src = e.target.files;
+      const files = inputFiles.files;
       for (let i = 0; i < files.length; i++) {
         previewFile(files[i]);
       }
-    }
-    fileInput.addEventListener('change', handleFileSelect);
+    },false);
   })();
 
   document.addEventListener('DOMContentLoaded',function(){
