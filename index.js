@@ -42,7 +42,7 @@
   function home_visible(){
     //サーバへの接続
     var xhr = new XMLHttpRequest();
-	  xhr.open("GET", 'server.php', true);
+	  xhr.open("GET", 'http://studyblog.icurus.jp/eatweet/server.php', true);
 	  xhr.onreadystatechange = function () {
 	  	if (xhr.readyState == 4 && xhr.status == 200) {
 	  		var response = JSON.parse(this.responseText);
