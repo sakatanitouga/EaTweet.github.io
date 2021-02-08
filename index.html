@@ -13,8 +13,8 @@
             </div>
              
             <div class="contents" >
-            <button class="reshipi" v-for="content in Contents_js" type="button">   
-                <img src="image/55f1cd20ee9b1f3be4a4b4ef0c30029f" style="width:300px; height: 160px; margin-left: -5px;">
+            <a class="reshipi" v-for="content in Contents_js"  href = "http://studyblog.icurus.jp/eatweet/bhhgff/pasuta/">   
+                <img src="image/55f1cd20ee9b1f3be4a4b4ef0c30029f" style="width:300px; height: 160px; margin-left: 0px;">
                 <h1 style="font-size: 20px; margin-left: 5px; margin-top: 0px; margin-bottom: 0px;">{{content.title}}</h1><br>
                 <p style=" font-size: 17px; margin-top: -20px;">{{content.message}}</p>
             </button>
@@ -39,24 +39,24 @@
                 </div>
                 <div class="make_recipe">
                     <button id="Close"><h1 style="color:#ffeeba;">Close</h1></button>
-                    <div style="margin-top: 20px; margin-left: 10px;">
-                        <h1 style="font-size:20px">料理名</h1>
-                        <input type="text" class="input_title" v-model="input_title">
-                    </div>
-                    
-                    <div style="margin-top: 20px; margin-left: 10px;">
-                        <h1 style="font-size:20px">コメント</h1>
-                        <input type="text" class="input_title" v-model = "input_comment">
-                    </div>
-                    <form method="post" action="http://localhost/aaa/" enctype="multipart/form-data">
+                   
+                    <form method="post" action="http://studyblog.icurus.jp/eatweet/index.php" enctype="multipart/form-data">
                         <input name = "user_id" v-model="user_id" style="display: none;">
                         <input type="file" name="file" id="up_image" multiple>
                         <div id = "preview"></div>
+
+                        <div style="margin-top: 20px; margin-left: 10px;">
+                            <h1 style="font-size:20px">料理名</h1>
+                            <input type="text" class="input_title" v-model="input_title"　name = "input_title">
+                        </div>
+                        
+                        <div style="margin-top: 20px; margin-left: 10px;">
+                            <h1 style="font-size:20px">調理方法</h1>
+                            <input type="text" class="input_title" v-model = "input_comment" name = "how_to_method">
+                        </div>
+
                         <button id="投稿"type="submit"><h1 class="make_recipe_post">投稿</h1></button>
                     </form>
-                    
-
-                   
                 </div>    
             </div>
         </div>
