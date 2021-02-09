@@ -41,6 +41,7 @@
   //ホーム画面にレシピを表示
   function home_visible(){
     //サーバへの接続
+    xhr.abort();
     var xhr = new XMLHttpRequest();
 	  xhr.open("GET", '//studyblog.icurus.jp/eatweet/server.php', true);
 	  xhr.onreadystatechange = function () {
@@ -50,7 +51,7 @@
 	  	}
 	  }
 	  xhr.send(null);
-
+    xhr.abort();
     for(let i = 0;i<10;i++){
       var content = {title: 'うんこ',message: 'トイレいきたいです！！！！'};
       Contents.$set(Contents.Contents_js, i, content);
