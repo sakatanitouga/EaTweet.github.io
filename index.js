@@ -56,8 +56,8 @@
     */
 
     $.ajax({
-      url: 'http://studyblog.icurus.jp/eatweet/server.php',
       type: 'GET',
+      url: 'http://studyblog.icurus.jp/eatweet/server.php',
       dataType: 'text',
       data : {
           no : 3
