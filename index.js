@@ -41,20 +41,6 @@
   //ホーム画面にレシピを表示
   function home_visible(){
     //サーバへの接続
-    /*
-    xhr.abort();
-    var xhr = new XMLHttpRequest();
-	  xhr.open("GET", '//studyblog.icurus.jp/eatweet/server.php', true);
-	  xhr.onreadystatechange = function () {
-	  	if (xhr.readyState == 4 && xhr.status == 200) {
-	  		var response = JSON.parse(this.responseText);
-		    	console.log(response);
-	  	}
-	  }
-	  xhr.send(null);
-    xhr.abort();
-    */
-
     $.ajax({
       type: 'GET',
       url: 'http://studyblog.icurus.jp/eatweet/server.php',
