@@ -41,6 +41,7 @@
   //ホーム画面にレシピを表示
   function home_visible(){
     //サーバへの接続
+    /*
     xhr.abort();
     var xhr = new XMLHttpRequest();
 	  xhr.open("GET", '//studyblog.icurus.jp/eatweet/server.php', true);
@@ -52,6 +53,24 @@
 	  }
 	  xhr.send(null);
     xhr.abort();
+    */
+
+    $.ajax({
+      url: 'http//studyblog.icurus.jp/eatweet/server.php',
+      type: 'GET',
+      dataType: 'text',
+      data : {
+          no : 3
+      }
+    }).done(function(data){
+        /* 通信成功時 */
+        console.log(data); //取得したHTMLを.resultに反映
+
+    }).fail(function(data){
+        /* 通信失敗時 */
+        console.log('通信失敗！');
+
+    });
     for(let i = 0;i<10;i++){
       var content = {title: 'うんこ',message: 'トイレいきたいです！！！！'};
       Contents.$set(Contents.Contents_js, i, content);
