@@ -43,7 +43,7 @@
     //サーバへの接続
     $.ajax({
       type: 'GET',
-      url: 'http://studyblog.icurus.jp/eatweet/server.php',
+      url: 'https://studyblog.icurus.jp/eatweet/server.php',
       dataType: 'text',
       data : {
           no : 3
