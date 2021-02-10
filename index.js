@@ -9,21 +9,7 @@
       user_id:'2dfa'
     }
   });
-  
-  /*
-  //サーバと接続
-  const sock = new WebSocket("ws://127.0.0.1:2000");
-  sock.addEventListener("open", e => {
-    console.log("サーバと接続に成功");
-  });
-    
-  var Customer_inf = {
-    id:'2',
-    user_name:'',
-    mylist: [],
-    make_recipe:[] 
-  }
-  */
+
   var image_src;
   //イベント登録
   document.addEventListener('DOMContentLoaded',function(){
@@ -35,28 +21,12 @@
   //メイン関数
   function main(){
     home_visible();
-
   }
 
   //ホーム画面にレシピを表示
   function home_visible(){
-    //サーバへの接続
-    $.ajax({
-      type: 'GET',
-      url: 'https://studyblog.icurus.jp/eatweet/server.php',
-      dataType: 'text',
-      data : {
-          no : 3
-      }
-    }).done(function(data){
-        /* 通信成功時 */
-        console.log(data); //取得したHTMLを.resultに反映
+    conpornent = ajax('text','home');
 
-    }).fail(function(data){
-        /* 通信失敗時 */
-        console.log('通信失敗！');
-
-    });
     for(let i = 0;i<10;i++){
       var content = {title: 'うんこ',message: 'トイレいきたいです！！！！'};
       Contents.$set(Contents.Contents_js, i, content);
@@ -107,17 +77,29 @@
 
   //レシピ投稿ボタンが押された時の処理
   function make_recipe_post(){    
-  /*
-    var post_method = {title:Contents.input_title,howto:Contents.input_comment,image:image_src};
-    makelecipe_length = Customer_inf.make_recipe.length;
-
-    Customer_inf.make_recipe[makelecipe_length-1] = post_method;
-    console.log(Customer_inf);
-    sock.send(JSON.stringify(Customer_inf));
-  */
     Contents.dm ='none';    
   }
-  
+  //Ajax通信
+  function ajax(type,post_data){
+    ret;
+    //サーバへの接続
+    $.ajax({
+      type: 'GET',
+      url: 'https://studyblog.icurus.jp/eatweet/server.php',
+      dataType: type,
+      data : {
+          no : post_data
+      }
+    }).done(function(data){
+        /* 通信成功時 */
+        ret = data;
+        console.log(data); //取得したHTMLを.resultに反映  
+    }).fail(function(data){
+        /* 通信失敗時 */
+        console.log('通信失敗！');
+    });
+  } 
   main();
+  return ret;
 })();
 
