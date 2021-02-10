@@ -86,7 +86,7 @@
     $.ajax({
       type: 'GET',
       url: 'https://studyblog.icurus.jp/eatweet/server.php',
-      dataType: type,
+      dataType: "text",
       data : {
           no : post_data
       }
