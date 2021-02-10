@@ -31,7 +31,7 @@
     Contents.Contents_js = conpornent_js;
     /*
     for(let i = 0;i<10;i++){
-      //var content = {title: 'うんこ',message: 'トイレいきたいです！！！！'};
+      //var content = {title: 'パスタ',url: 'トイレいきたいです！！！！'};
       Contents.$set(Contents.Contents_js, i, conpornent_js);
     }
     */
