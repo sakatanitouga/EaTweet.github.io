@@ -7,11 +7,13 @@
     </head>
     <body style="background-color: #ffb84d; ">
         <div id = "app">
+            <!--検索ボックス-->
             <div class="serch_window">
                 <input type="text"  size="30">
                 <a href = ""  onclick="" style="margin-left: 60px;">検索</a>
             </div>
              
+            <!--コンテンツの表示-->
             <div class="contents" >
             <a class="reshipi" v-for="content in Contents_js"  href = "https://studyblog.icurus.jp/eatweet/bhhgff/pasuta/">   
                 <img src="image/55f1cd20ee9b1f3be4a4b4ef0c30029f" style="width:300px; height: 160px; margin-left: 0px;">
@@ -19,21 +21,25 @@
                 <p style=" font-size: 17px; margin-top: -20px;">{{content.message}}</p>
             </button>
             </div>
-            
+
+            <!--アカウントボタン-->
             <div class="account-tag">
                 <h1 onclick = "acount_Click();" style="font-size: 30px; color: #674f49; margin-top: -2px;">アカウント1</h1>
                 <p style="margin-top: -20px;">fdafafddaf@gmail.com</p>
                 <img src="image/illustration-free-01.jpg" class="account-image">
             </div>
-    
+            
+            <!--左側メニュー-->
             <div class="background-leftbar">
                 <a onclick="news_Click();" style="color: #4c8d42;" href = ""><b>ニュース<br></b></a>
                 <a onclick="news_Click();" style="color: #a16e55;" href = ""><b>今日のごはん<br></b></a>
                 <a onclick="news_Click();" style="color: #da8c5e;" href = ""><b>マイリスト<br></b></a>
             </div>
             
+            <!--レシピ作成ボタン-->
             <button class="recipe_creation" href="" id="レシピ作成"><b>レシピ作成</b></button>
             
+            <!--レシピ作成ビュー-->
             <div v-bind:style ="{display:dm}">
                 <div class = "make_recipe_back">
                 </div>

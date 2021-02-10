@@ -26,10 +26,11 @@
   //ホーム画面にレシピを表示
   function home_visible(){
     conpornent = ajax('home');
-
+    conpornent_js = JSON.parse(conpornent);
+    console.log(conpornent_js);
     for(let i = 0;i<10;i++){
       var content = {title: 'うんこ',message: 'トイレいきたいです！！！！'};
-      Contents.$set(Contents.Contents_js, i, content);
+      Contents.$set(Contents.Contents_js, i, conpornent_js);
     }
   }
   
@@ -93,7 +94,6 @@
     }).done(function(data){
         /* 通信成功時 */
         ret = data;
-        console.log(data); //取得したHTMLを.resultに反映  
     }).fail(function(data){
         /* 通信失敗時 */
         console.log('通信失敗！');
@@ -102,6 +102,6 @@
   } 
 
   main();
-  
+
 })();
 
