@@ -25,7 +25,7 @@
 
   //ホーム画面にレシピを表示
   function home_visible(){
-    conpornent = ajax('text','home');
+    conpornent = ajax('home');
 
     for(let i = 0;i<10;i++){
       var content = {title: 'うんこ',message: 'トイレいきたいです！！！！'};
@@ -80,8 +80,8 @@
     Contents.dm ='none';    
   }
   //Ajax通信
-  function ajax(type,post_data){
-    ret;
+  function ajax(post_data){
+    ret = "";
     //サーバへの接続
     $.ajax({
       type: 'GET',
