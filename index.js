@@ -45,7 +45,7 @@
       console.log( xhr.responseText );
       ret = xhr.responseText;
     }
-    
+    return ret;
 }
   }
   var image_src;
