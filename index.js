@@ -10,6 +10,25 @@
     }
   });
 
+  function ajax(post_data){
+    ret = "";
+    //サーバへの接続
+    $.ajax({
+      type: 'GET',
+      url: 'https://studyblog.icurus.jp/eatweet/server.php',
+      dataType: "text",
+      data : {
+          no : post_data
+      }
+    }).done(function(data){
+        /* 通信成功時 */
+        ret = data;
+    }).fail(function(data){
+        /* 通信失敗時 */
+        console.log('通信失敗！');
+    });
+    return ret;
+  }
   var image_src;
   //イベント登録
   document.addEventListener('DOMContentLoaded',function(){
@@ -85,25 +104,7 @@
     Contents.dm ='none';    
   }
   //Ajax通信
-  function ajax(post_data){
-    ret = "";
-    //サーバへの接続
-    $.ajax({
-      type: 'GET',
-      url: 'https://studyblog.icurus.jp/eatweet/server.php',
-      dataType: "text",
-      data : {
-          no : post_data
-      }
-    }).done(function(data){
-        /* 通信成功時 */
-        ret = data;
-    }).fail(function(data){
-        /* 通信失敗時 */
-        console.log('通信失敗！');
-    });
-    return ret;
-  } 
+   
 
   main();
 
