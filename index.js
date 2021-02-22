@@ -24,12 +24,13 @@
         /* 通信成功時 */
         ret = data;
         console.log(data);
-    }).fail(function(data){
+        console.log(ret);
+        return ret;
+      }).fail(function(data){
         /* 通信失敗時 */
         console.log('通信失敗！');
+        return ret;
     });
-    console.log(ret);
-    return ret;
   }
   var image_src;
   //イベント登録
