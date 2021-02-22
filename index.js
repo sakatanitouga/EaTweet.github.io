@@ -26,15 +26,16 @@
   //ホーム画面にレシピを表示
   function home_visible(){
     conpornent = ajax('home');
-    conpornent_js = JSON.parse(conpornent);
-    console.log(conpornent_js);
-    Contents.Contents_js = conpornent_js;
-    /*
+    //conpornent_js = JSON.parse(conpornent);
+    //console.log(conpornent_js);
+    //Contents.Contents_js = conpornent_js;
+    
+    console.log(conpornent);
     for(let i = 0;i<10;i++){
-      //var content = {title: 'パスタ',url: 'トイレいきたいです！！！！'};
+      var content = {title: 'パスタ',url: 'トイレいきたいです！！！！'};
       Contents.$set(Contents.Contents_js, i, conpornent_js);
     }
-    */
+    
   }
   
   //レシピ作成ボタンが押された時
