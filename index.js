@@ -12,6 +12,7 @@
 
   function ajax(post_data){
     ret = "";
+    /*
     //サーバへの接続
     $.ajax({
       type: 'GET',
@@ -21,17 +22,17 @@
           no : post_data
       }
     }).done(function(data){
-        /* 通信成功時 */
+        
         ret = data;
         console.log(data);
         console.log(ret);
         return ret;
       }).fail(function(data){
-        /* 通信失敗時 */
+  
         console.log('通信失敗！');
         return ret;
     });
-
+    */
 
 
     var xhr = new XMLHttpRequest();
