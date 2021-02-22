@@ -23,6 +23,7 @@
     }).done(function(data){
         /* 通信成功時 */
         ret = data;
+        console.log(data);
     }).fail(function(data){
         /* 通信失敗時 */
         console.log('通信失敗！');
