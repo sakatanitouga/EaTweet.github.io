@@ -28,6 +28,7 @@
         /* 通信失敗時 */
         console.log('通信失敗！');
     });
+    console.log(ret);
     return ret;
   }
   var image_src;
