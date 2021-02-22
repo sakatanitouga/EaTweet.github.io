@@ -33,7 +33,7 @@
     console.log(conpornent);
     for(let i = 0;i<10;i++){
       var content = {title: 'パスタ',url: 'トイレいきたいです！！！！'};
-      Contents.$set(Contents.Contents_js, i, conpornent_js);
+      Contents.$set(Contents.Contents_js, i, content);
     }
     
   }
