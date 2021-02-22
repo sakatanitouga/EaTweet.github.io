@@ -31,6 +31,21 @@
         console.log('通信失敗！');
         return ret;
     });
+
+
+
+    var xhr = new XMLHttpRequest();
+ 
+    xhr.open('GET', 'https://studyblog.icurus.jp/eatweet/server.php');
+    xhr.send();
+ 
+    xhr.onreadystatechange = function() {
+    if(xhr.readyState === 4 && xhr.status === 200) {
+      console.log( xhr.responseText );
+      ret = xhr.responseText;
+    }
+    
+}
   }
   var image_src;
   //イベント登録
