@@ -44,16 +44,7 @@
       console.log(response);
       conpornent_js = JSON.parse(response);
       Contents.Contents_js = conpornent_js;
-      /*
-      for(let i = 0;i<10;i++){
-        var content = {title: 'パスタ',url: 'トイレいきたいです！！！！'};
-        Contents.$set(Contents.Contents_js, i, content);
-      }
-      */
     });
-    //
-    //console.log(conpornent_js);
-    //
   }
   
   //レシピ作成ボタンが押された時
