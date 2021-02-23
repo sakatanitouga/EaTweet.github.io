@@ -10,43 +10,20 @@
     }
   });
 
-  function ajax(post_data){
-    ret = "";
-    /*
-    //サーバへの接続
-    $.ajax({
-      type: 'GET',
-      url: 'https://studyblog.icurus.jp/eatweet/server.php',
-      dataType: "text",
-      data : {
-          no : post_data
+  //AJAX処理
+  function ajax(){
+    return new Promise(function(resolve) {
+      var xhr = new XMLHttpRequest();
+      xhr.open('GET', 'https://studyblog.icurus.jp/eatweet/server.php');
+      xhr.send();
+      
+      xhr.onreadystatechange = function() {
+        if(xhr.readyState === 4 && xhr.status === 200) {
+          console.log(xhr.responseText);
+          resolve(xhr.responseText);        
+        }
       }
-    }).done(function(data){
-        
-        ret = data;
-        console.log(data);
-        console.log(ret);
-        return ret;
-      }).fail(function(data){
-  
-        console.log('通信失敗！');
-        return ret;
     });
-    */
-
-
-    var xhr = new XMLHttpRequest();
- 
-    xhr.open('GET', 'https://studyblog.icurus.jp/eatweet/server.php');
-    xhr.send();
- 
-    xhr.onreadystatechange = function() {
-    if(xhr.readyState === 4 && xhr.status === 200) {
-      console.log( xhr.responseText );
-      ret = xhr.responseText;
-    }
-    return ret;
-}
   }
   var image_src;
   //イベント登録
@@ -63,17 +40,20 @@
 
   //ホーム画面にレシピを表示
   function home_visible(){
-    conpornent = ajax('home');
-    //conpornent_js = JSON.parse(conpornent);
+    ajax().then(function(response){
+      console.log(response);
+      conpornent_js = JSON.parse(response);
+      Contents.Contents_js = conpornent_js;
+      /*
+      for(let i = 0;i<10;i++){
+        var content = {title: 'パスタ',url: 'トイレいきたいです！！！！'};
+        Contents.$set(Contents.Contents_js, i, content);
+      }
+      */
+    });
+    //
     //console.log(conpornent_js);
-    //Contents.Contents_js = conpornent_js;
-    
-    console.log(conpornent);
-    for(let i = 0;i<10;i++){
-      var content = {title: 'パスタ',url: 'トイレいきたいです！！！！'};
-      Contents.$set(Contents.Contents_js, i, content);
-    }
-    
+    //
   }
   
   //レシピ作成ボタンが押された時
@@ -122,9 +102,6 @@
   function make_recipe_post(){    
     Contents.dm ='none';    
   }
-  //Ajax通信
-   
-
   main();
 
 })();

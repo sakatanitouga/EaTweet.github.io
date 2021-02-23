@@ -15,10 +15,10 @@
              
             <!--コンテンツの表示-->
             <div class="contents" >
-            <a class="reshipi" v-for="content in Contents_js"  href = "https://studyblog.icurus.jp/eatweet/bhhgff/pasuta/">   
-                <img src="image/55f1cd20ee9b1f3be4a4b4ef0c30029f" style="width:300px; height: 160px; margin-left: 0px;">
+            <a class="reshipi" v-for="content in Contents_js" v-bind:href="content.url">   
+                <img v-bind:src="content.img_title" style="width:300px; height: 160px; margin-left: 0px;">
                 <h1 style="font-size: 20px; margin-left: 5px; margin-top: 0px; margin-bottom: 0px;">{{content.title}}</h1><br>
-                <p style=" font-size: 17px; margin-top: -20px;">{{content.url}}</p>
+                <p style=" font-size: 17px; margin-top: -20px;">{{content.material}}</p>
             </button>
             </div>
 
@@ -46,7 +46,8 @@
                 <div class="make_recipe">
                     <button id="Close"><h1 style="color:#ffeeba;">Close</h1></button>
                    
-                    <form method="post" action="http://studyblog.icurus.jp/eatweet/index.php" enctype="multipart/form-data">
+                    <form method="post" action="https://studyblog.icurus.jp/eatweet/index.php" enctype="multipart/form-data">
+                        
                         <input name = "user_id" v-model="user_id" style="display: none;">
                         <input type="file" name="file" id="up_image" multiple>
                         <div id = "preview"></div>
