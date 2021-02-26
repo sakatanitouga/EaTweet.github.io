@@ -9,7 +9,7 @@
    */
    position: absolute;
    top: 10px;
-   width: 300px;
+   width: 20%;
    height: 70px;
    background: #ffeeba;
    border-radius: 10px;
@@ -31,7 +31,7 @@
  .contents{
   position: absolute;
   top: 100px;
-  left: 350px;
+  left: 25%;
   width: 74%;
   height: 80%;
   /*background-color: #ffeeba;*/   
@@ -56,7 +56,7 @@
   position: absolute;
   top: 100px;
   bottom: 0px;
-  width: 300px;
+  width: 20%;
   height: 400px;
   background: #ffeeba;
   border-radius: 10px;
@@ -72,7 +72,7 @@
  /*****************************/
  .serch_window{
   border-radius: 10px;
-  margin-left: 350px;
+  margin-left: 25%;
   margin-right: auto;
   margin-top: 15px;
   width: 500px;
