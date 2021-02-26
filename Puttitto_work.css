@@ -1,3 +1,6 @@
+ /*****************************/
+ /*アカウントボタン関連*/
+ /*****************************/
  .account-tag {
    /*
    position: absolute;
@@ -21,6 +24,10 @@
   left: -55px;
   top: 10px;
  }
+
+ /*****************************/
+ /*コンテント表示*/
+ /*****************************/
  .contents{
   position: absolute;
   top: 100px;
@@ -41,6 +48,10 @@
    margin-left: 5px;
    text-align: left;
  }
+
+ /*****************************/
+ /*左メニュー関連*/
+ /*****************************/
  .background-leftbar {
   position: absolute;
   top: 100px;
@@ -55,9 +66,13 @@
   margin-left: 10px;
   font-size: 30px;
  }
+
+ /*****************************/
+ /*検索関連*/
+ /*****************************/
  .serch_window{
   border-radius: 10px;
-  margin-left: auto;
+  margin-left: 350px;
   margin-right: auto;
   margin-top: 15px;
   width: 500px;
@@ -72,6 +87,10 @@
   border: none; 
   outline: none;
  }
+
+ /*****************************/
+ /*レシピ作成ボタン*/
+ /*****************************/
  .recipe_creation{
   position: absolute;
   border-radius: 10px;
@@ -82,6 +101,10 @@
   background-color: #ffeeba;
   font-size: 20px;   
  }
+
+ /*****************************/
+ /*レシピ投稿フォーム関連*/
+ /*****************************/
  .make_recipe_back{
    position: absolute;
    left: 0px;
@@ -121,6 +144,10 @@
   margin: 10px;
   border: solid 1px silver;
 }
+
+/*****************************/
+/*フォント、ボタン関連*/
+/*****************************/
  a{
   text-decoration: none;
  }

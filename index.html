@@ -48,18 +48,28 @@
                    
                     <form method="post" action="https://studyblog.icurus.jp/eatweet/index.php" enctype="multipart/form-data">
                         
+                        <!--画像アップロード-->
                         <input name = "user_id" v-model="user_id" style="display: none;">
                         <input type="file" name="file" id="up_image" multiple>
                         <div id = "preview"></div>
 
+                        <!--料理名入力-->
                         <div style="margin-top: 20px; margin-left: 10px;">
                             <h1 style="font-size:20px">料理名</h1>
                             <input type="text" class="input_title" v-model="input_title"　name = "input_title">
                         </div>
                         
+                        <!--材料入力-->
+                        <div style="margin-top: 20px; margin-left: 10px;">
+                            <h1 style="font-size:20px">材料</h1>
+                            <input type="text" class="input_title" v-model="input_material"　name = "input_material">
+                        </div>
+
+                        <!--調理方法入力-->
                         <div style="margin-top: 20px; margin-left: 10px;">
                             <h1 style="font-size:20px">調理方法</h1>
-                            <input type="text" class="input_title" v-model = "input_comment" name = "how_to_method">
+                            <!--<input type="text" class="input_title" v-model = "input_comment" name = "how_to_method">-->
+                            <textarea class="input_title"  v-model = "input_comment" name = "how_to_method" rows="4"></textarea>
                         </div>
 
                         <button id="投稿"type="submit"><h1 class="make_recipe_post">投稿</h1></button>
